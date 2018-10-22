@@ -1,0 +1,116 @@
+<div class="ui">
+    <div class="lists">
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+        <div class="list">
+          <ul>
+            <header>Ideia X</header>
+            <div class="dropzone" appDropzone (drop)="move(currentBox, dropzone1)" (remove)="move(currentBox, availableBoxes)">
+            <div *ngFor="let box of dropzone1" class="box"
+                  appDroppable (dragStart)="currentBox = box">
+              {{ box }}
+              <div class="box" *appDraggableHelper>{{ box }}</div>
+            </div>
+            </div>
+          </ul>
+        </div>
+    </div>  
+</div>
+
+<!--<div class="ui">
+   <div class="list">
+      <ul>
+          <div *ngFor="let box of availableBoxes" class="box" appDroppable (dragStart)="currentBox = box">
+            {{ box }}
+            <div class="box box-helper" *appDraggableHelper>{{ box }}</div>
+          </div>
+      </ul>
+  </div>
+</div>-->
+  
+    <div class="list-r">
+      <ul>
+      <header>Suas Ideias</header>
+        <div *ngFor="let box of availableBoxes" class="box" appDroppable (dragStart)="currentBox = box">
+        {{ box }}
+        <div class="box box-helper" *appDraggableHelper>{{ box }}</div>
+      </div>
+    </ul>
+    </div>
+
+    <form class="form-inline">
+
+        <div class="md-form form-group">
+            <i class="fa fa-envelope prefix"></i>
+            <input mdbInputDirective type="email" class="form-control" id="form9" name="email">
+            <label for="form9">Type your e-mail</label>
+        </div>
+        <div class="md-form form-group">
+            <i class="fa fa-lock prefix"></i>
+            <input mdbInputDirective type="password" class="form-control" id="form10" name="password">
+            <label for="form10">Type your password</label>
+        </div>
+      
+        <div class="md-form form-group">
+            <a mdbBtn color="primary" size="lg" class="waves-light" mdbWavesEffect>Login</a>
+        </div>
+      
+      </form>
