@@ -13,7 +13,7 @@ import { ContentComponent } from './content/content.component';
 import { environment } from '../environments/environment';
 export const firebaseConfig = environment.firebaseConfig;
 
-import {ROUTES} from './app.routes';
+import {ROUTES, routing} from './app.routes';
 import { CoreModule } from './core/core.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsuarioComponent } from './usuario/usuario.component';
@@ -21,6 +21,9 @@ import { CadastrousuarioComponent } from './usuario/cadastrousuario/cadastrousua
 import { LoginComponent } from './usuario/login/login.component';
 import { SalaComponent } from './sala/sala.component';
 import { DraggableModule } from './sala/draggable/draggable.module';
+import { AreaTrabalhoComponent } from './area-trabalho/area-trabalho.component';
+import { CriarsalaComponent } from './criarsala/criarsala.component';
+import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,17 @@ import { DraggableModule } from './sala/draggable/draggable.module';
     CadastrousuarioComponent,
     LoginComponent,
     SalaComponent,
+    AreaTrabalhoComponent,
+    CriarsalaComponent,
+    EntrarsalaComponent,
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     RouterModule.forRoot(ROUTES),
     CoreModule,
-    DraggableModule
+    DraggableModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
