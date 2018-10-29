@@ -22,8 +22,12 @@
 
 #foto{
     border:4px solid #999;
-    background:transparent url(/imagem.jpg);
+
+    background:transparent url(/brainstorming-1-638.jpg);
     border-radius: 20px;
+
+	background:transparent url(/brainstorming-1-638.jpg);
+
    
 }
 .menu{
