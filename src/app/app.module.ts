@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+//Importacoes necessarias firebase
+import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { Auth } from './auth.service';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -17,7 +21,7 @@ import {ROUTES, routing} from './app.routes';
 import { CoreModule } from './core/core.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { CadastrousuarioComponent } from './usuario/cadastrousuario/cadastrousuario.component';
+import { CadastroUsuarioComponent } from './usuario/cadastrousuario/cadastrousuario.component';
 import { LoginComponent } from './usuario/login/login.component';
 import { SalaComponent } from './sala/sala.component';
 import { DraggableModule } from './sala/draggable/draggable.module';
@@ -34,7 +38,7 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
     ContentComponent,
     UserProfileComponent,
     UsuarioComponent,
-    CadastrousuarioComponent,
+    CadastroUsuarioComponent,
     LoginComponent,
     SalaComponent,
     AreaTrabalhoComponent,
@@ -47,9 +51,11 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
     RouterModule.forRoot(ROUTES),
     CoreModule,
     DraggableModule,
-    routing
+    routing,
+	ReactiveFormsModule,
+	FormsModule
   ],
-  providers: [],
+  providers: [Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

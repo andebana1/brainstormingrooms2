@@ -13,12 +13,13 @@
       </div>
 
       <hr/>
-      <form>
+      <form [formGroup]="form_cadastro" (ngSubmit)="cadastrarUser()">
         <div class="form-group">
           <input 
             type="email" 
             class="form-control" 
             placeholder="E-mail"
+			formControlName="email"
           >
         </div>
 
@@ -27,6 +28,7 @@
             type="text"
             class="form-control" 
             placeholder="Nome completo"
+			formControlName="nomeCompleto"
           >
         </div>
 
@@ -35,6 +37,7 @@
             type="text"
             class="form-control" 
             placeholder="Nickname"
+			formControlName="nickname"
           >
         </div>
 
@@ -43,6 +46,7 @@
             type="text" 
             class="form-control" 
             placeholder="Data de nascimento"
+			formControlName="dataNascimento"
             >
         </div>
 
@@ -52,10 +56,11 @@
             type="password"
             class="form-control" 
             placeholder="Senha"
+			formControlName="senha"
           >
         </div>
-
-        <button routerLink = "../area-trabalho" type="submit" class="btn btnCadastrar btn-block">Cadastrar</button>
+        <!--<button routerLink = "../area-trabalho" type="submit" class="btn btnCadastrar btn-block">Cadastrar</button>-->
+		 <button type="submit" class = "btn btnCadastrar btn-block">Cadastrar</button>
       </form>
       <hr />
 
