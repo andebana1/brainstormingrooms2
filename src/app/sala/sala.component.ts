@@ -23,12 +23,6 @@ export class SalaComponent implements OnInit {
     'Box 3',
     'Box 4',
     'Box 5',
-    'Box 6',
-    'Box 7',
-    'Box 8',
-    'Box 9',
-    'Box 10',
-    'diuashdiasdbnklasbndklhiausdhliasuhdauishdailusdhasuihxiaushxpiasbuxilausxoaibuxliausbxlaisbuxiaslbu'
   ];
 
   dropzone1 = [
@@ -38,6 +32,14 @@ export class SalaComponent implements OnInit {
   dropzone2 = [
     'Box 7'
   ];
+  dropzone3 = [
+    'Box 7'
+  ];
+  dropzone4 = [
+    'Box 7'
+  ];
+
+  dropzones = [this.dropzone1, this.dropzone2, this.dropzone3, this.dropzone4];
 
   currentBox?: string;
 
@@ -51,6 +53,10 @@ export class SalaComponent implements OnInit {
 
   Add(name: string): void{
     this.availableBoxes.push(name);
+  }
+
+  addDropZone(classe: string): void{
+  
   }
 
 }
