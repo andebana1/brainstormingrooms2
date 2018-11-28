@@ -19,13 +19,21 @@
 </div>
 <!--  -->
 <div class="list-r">
-  <ul>
-    <header>Suas Ideias</header>
+    <ul>
+      <header>Suas Ideias</header>
       <div *ngFor="let box of availableBoxes" class="box" appDroppable (dragStart)="currentBox = box">
         {{ box }}
         <div class="box box-helper" *appDraggableHelper>{{ box }}</div>
       </div>
     </ul>
-    <input type="text" #novaideia placeholder="Digite sua ideia">
-    <button (click)="Add(novaideia.value)">text</button>
+    <footer>
+      <input class="texto" type="text" #novaideia placeholder="Digite sua ideia">
+      <button (click)="Add(novaideia.value)">Enviar ideia</button>
+    </footer>
   </div>
+
+  <ul>
+      <li *ngFor="let item of salas | async">
+          <pre>{{ item | json }}</pre>
+      </li>
+  </ul>

@@ -6,7 +6,10 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Auth } from './auth.service';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
 
 import { AppComponent } from './app.component';
 
@@ -52,8 +55,10 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
     CoreModule,
     DraggableModule,
     routing,
-	ReactiveFormsModule,
-	FormsModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+	  ReactiveFormsModule,
+	  FormsModule
   ],
   providers: [Auth],
   bootstrap: [AppComponent]
