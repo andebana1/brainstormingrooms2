@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 function remove(item: string, list: string[]) {
   if (list.indexOf(item) !== -1) {
     list.splice(list.indexOf(item), 1);
@@ -11,8 +14,11 @@ function remove(item: string, list: string[]) {
   styleUrls: ['./sala.component.scss']
 })
 export class SalaComponent implements OnInit {
+  public salas: Observable<any>;
 
-  constructor() { }
+  constructor(db: AngularFirestore) {
+    this.salas = db.collection('/Salas').valueChanges();
+   }
 
   ngOnInit() {
   }

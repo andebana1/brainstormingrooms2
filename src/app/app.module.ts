@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
 
 import { AppComponent } from './app.component';
 
@@ -47,7 +50,9 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
     RouterModule.forRoot(ROUTES),
     CoreModule,
     DraggableModule,
-    routing
+    routing,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
