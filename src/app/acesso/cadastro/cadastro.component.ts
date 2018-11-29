@@ -27,17 +27,19 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
   }
 
-  public cadastrarUsuario(): void{
-    //console.log(this.formulario)
+  //public exibirPainelLogin(): void{
+    //this.exibirPainel.emit('Login')
+ // }
 
+  public cadastrarUsuario(): void {    
     let usuario: Usuario = new Usuario(
-      this.formulario.value.email,
-      this.formulario.value.nome_completo,
-      this.formulario.value.nickname,
-      this.formulario.value.data_nascimento,
-      this.formulario.value.senha,
+      
+        this.formulario.value.email,
+        this.formulario.value.nome_completo,
+        this.formulario.value.nickname,
+        this.formulario.value.data_nascimento,
+        this.formulario.value.senha
     )
     this.autenticacao.cadastrarUsuario(usuario)
-    //console.log(usuario)
   }
 }

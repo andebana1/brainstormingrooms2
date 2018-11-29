@@ -11,6 +11,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  public title: string = 'Brainstorming Rooms'
+  public title: string = 'Brainstorming-Rooms'
 
 }

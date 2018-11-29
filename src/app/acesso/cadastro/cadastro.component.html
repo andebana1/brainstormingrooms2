@@ -7,64 +7,57 @@
   <div class="card text-black bg-white mb-3" style="max-width: 30rem;">
     <div class="card-body">
       <div class="card-title"></div>
-
       <div>
         <h5 class="card-title">Cadastro do usuário</h5>
       </div>
-
       <hr/>
-      <form [formGroup]="formulario" (ngSubmit)="cadastrarUsuario()">
+      
+      <!-- Executando resulta no erro "first argument email must be a valid string.."
+        <form [formGroup]="formulario" (ngSubmit)="cadastrarUsuario()"  action = "../area-trabalho"> 
+        -->
+        <form>
         <div class="form-group">
           <input 
             type="email" 
             class="form-control" 
             placeholder="E-mail"
-            formControlName="email"
           >
         </div>
-
         <div class="form-group">
           <input 
             type="text"
             class="form-control" 
             placeholder="Nome completo"
-            formControlName="nome_completo"
           >
         </div>
-
         <div class="form-group">
           <input 
             type="text"
             class="form-control" 
             placeholder="Nickname"
-            formControlName="nickname"
           >
         </div>
-
         <div class="form-group">
             <input 
             type="text" 
             class="form-control" 
             placeholder="Data de nascimento"
-            formControlName="data_nascimento"
             >
         </div>
-
-
         <div class="form-group">
           <input 
             type="password"
             class="form-control" 
             placeholder="Senha"
-            formControlName="senha"
           >
         </div>
-
-        <button routerLink = "../area-trabalho" type="submit" class="btn btnCadastrar btn-block">Cadastrar</button>
+          <button routerLink = "../area-trabalho" 
+          type="submit" 
+          class="btn btnCadastrar btn-block">
+          Cadastrar</button>
       </form>
       <hr />
-
-      <p class="small text-center">Ao fazer este, você concorda com nossos <b>Termos de uso</b>.  </p>
+      <p class="small text-center">Ao fazer este bendito cadastro, você concorda com nossos <b>Termos de uso</b> e <b>Política de privacidade</b>.</p>
 
     </div>
   </div>

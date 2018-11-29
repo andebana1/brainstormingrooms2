@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/Forms'
+import { FormGroup, FormControl} from '@angular/forms'
 
 import { Autenticacao } from '../../autenticacao.service'
 
@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   public autenticar(): void{
-    //console.log(this.formulario)
     this.autenticacao.autenticar(
       this.formulario.value.email,
       this.formulario.value.senha
