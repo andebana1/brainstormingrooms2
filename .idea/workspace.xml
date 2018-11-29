@@ -3,34 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e872f538-e71a-4e97-967f-a77d20183f50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/acesso/cadastro/cadastro.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/acesso/cadastro/cadastro.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/acesso/cadastro/cadastro.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/acesso/cadastro/cadastro.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/acesso/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/acesso/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/acesso/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/acesso/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/autenticacao.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/autenticacao.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/content/content.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/content.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/content/content.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/content.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/criarsala/criarsala.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/criarsala/criarsala.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/criarsala/criarsala.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/criarsala/criarsala.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/cadastrousuario/cadastrousuario.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/cadastrousuario/cadastrousuario.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/cadastrousuario/cadastrousuario.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/login/login.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/login/login.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/usuario.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/usuario.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/usuario.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/usuario.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/usuario/usuarios.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -46,7 +18,7 @@
     <session id="-992537852">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -257,16 +229,15 @@
       <workItem from="1542781842579" duration="353000" />
       <workItem from="1542857173065" duration="857000" />
       <workItem from="1543423785258" duration="571000" />
-      <workItem from="1543454115236" duration="681000" />
+      <workItem from="1543454115236" duration="1237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5959000" />
+    <option name="totallyTimeSpent" value="6515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
