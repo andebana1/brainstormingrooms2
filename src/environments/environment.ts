@@ -4,12 +4,12 @@
 
 export const environment = {
   firebaseConfig: {
-    apiKey: "AIzaSyDboEtq90tnZ5fmEiQMZs6n-luEJXU7LFA",
-    authDomain: "brainstorming-rooms.firebaseapp.com",
-    databaseURL: "https://brainstorming-rooms.firebaseio.com",
-    projectId: "brainstorming-rooms",
-    storageBucket: "brainstorming-rooms.appspot.com",
-    messagingSenderId: "219521793219"
+    apiKey: "AIzaSyBw40Xbjmt6wTsOwdPqja-kLiPYcmF7Tlw",
+    authDomain: "brainstormingrooms-80873.firebaseapp.com",
+    databaseURL: "https://brainstormingrooms-80873.firebaseio.com",
+    projectId: "brainstormingrooms-80873",
+    storageBucket: "brainstormingrooms-80873.appspot.com",
+    messagingSenderId: "673739019739"
   },
   production: false
 };
