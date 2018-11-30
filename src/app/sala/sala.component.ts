@@ -18,6 +18,7 @@ export class SalaComponent implements OnInit {
 
   constructor(db: AngularFirestore) {
     this.salas = db.collection('/Salas').valueChanges();
+    console.log(this.salas);
    }
 
   ngOnInit() {
