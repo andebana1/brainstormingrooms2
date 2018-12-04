@@ -31,6 +31,7 @@ import { DraggableModule } from './sala/draggable/draggable.module';
 import { AreaTrabalhoComponent } from './area-trabalho/area-trabalho.component';
 import { CriarsalaComponent } from './criarsala/criarsala.component';
 import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
+import { SalaDeVotacaoComponent } from './sala-de-votacao/sala-de-votacao.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
     AreaTrabalhoComponent,
     CriarsalaComponent,
     EntrarsalaComponent,
+    SalaDeVotacaoComponent,
   ],
   imports: [
     BrowserModule,
