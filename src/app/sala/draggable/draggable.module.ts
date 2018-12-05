@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 

@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { Directive, HostListener } from '@angular/core';
 import { DroppableService } from './droppable.service';
 

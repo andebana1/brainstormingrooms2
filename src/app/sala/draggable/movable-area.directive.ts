@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { AfterContentInit, ContentChildren, Directive, ElementRef, QueryList } from '@angular/core';
 import { MovableDirective } from './movable.directive';
 import { Subscription } from 'rxjs/Subscription';

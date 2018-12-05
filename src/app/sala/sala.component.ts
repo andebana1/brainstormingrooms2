@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {SalasService} from './salas.service';
 import { Observable } from 'rxjs';
+import { Teste } from './teste';
+import { Salas } from './salas';
 
 function remove(item: string, list: string[]) {
   if (list.indexOf(item) !== -1) {
@@ -14,47 +17,55 @@ function remove(item: string, list: string[]) {
   styleUrls: ['./sala.component.scss']
 })
 export class SalaComponent implements OnInit {
-  public salas: Observable<any>;
 
-  constructor(db: AngularFirestore) {
-    this.salas = db.collection('/Salas').valueChanges();
-    console.log(this.salas);
-   }
-
-  ngOnInit() {
+  arr: Salas[] = [];  
+  numClasses: number;
+  teste: any[][];
+  model = { test: null};  
+  dropzones: any[] = [];
+  availableBoxes: string[]=[];
+  classes: string[] = [];
+  usuario: string = 'ranielisonsoares2@gmail.com';
+  ngOnInit() {  
+    this._data.getSalas().subscribe(  
+      (salas: Salas[]) => {  
+        this.arr = salas;  
+        console.log(this.arr[0]); 
+        this.teste = this.arr[0].ideias[this.usuario];
+        this.numClasses = this.arr[0].classes.length;
+        this.classes = this.arr[0].classes;
+        console.log(this.classes);
+        for (let i in this.teste){
+          if(i.match('geral')===null){
+           this.dropzones.push(this.teste[i]);
+          }else{
+            for(let j in this.teste[i]){
+              this.availableBoxes.push(this.teste[i][j]);
+            }
+          }
+        }
+      }  
+    );   
+  }  
+  constructor(public _data: SalasService) {  
+  }  
+  userSubmit() {  
+    this._data.addSala(this.model);  
+    this.model.test = null;  
+  }  
+  onDelete(teste) {  
+    this._data.deleteSala(teste);  
   }
-
-  availableBoxes = [
-    'Box 1',
-    'Box 2',
-    'Box 3',
-    'Box 4',
-    'Box 5',
-  ];
-
-  dropzone1 = [
-    'Box 6'
-  ];
-
-  dropzone2 = [
-    'Box 7'
-  ];
-  dropzone3 = [
-    'Box 7'
-  ];
-  dropzone4 = [
-    'Box 7'
-  ];
-
-  dropzones = [this.dropzone1, this.dropzone2, this.dropzone3, this.dropzone4];
-
   currentBox?: string;
 
   move(box: string, toList: string[]): void {
     remove(box, this.availableBoxes);
-    remove(box, this.dropzone1);
-    remove(box, this.dropzone2);
-
+    let i = 0;
+    do{
+      remove(box, this.dropzones[i]);
+      i++;
+    }while(i<this.dropzones.length);
+    //console.log(this.teste);
     toList.push(box);
   }
 
@@ -63,7 +74,22 @@ export class SalaComponent implements OnInit {
   }
 
   addDropZone(classe: string): void{
-  
+    
   }
 
+  updtateIdeias(){
+    let upideias: any[] = [];
+    let id = this.arr[0].id;
+    let j = 0;
+    for(let i in this.arr[0].ideias[this.usuario]){
+      if(i.match('geral')===null){
+          this.arr[0].ideias[this.usuario][i] = this.dropzones[j];
+          j++;
+      }else{
+        console.log(i);
+        this.arr[0].ideias[this.usuario][i] = this.availableBoxes;
+    }
+  }
+    this._data.updateIdeia(this.arr[0].id, this.arr[0].ideias);
+  }
 }
