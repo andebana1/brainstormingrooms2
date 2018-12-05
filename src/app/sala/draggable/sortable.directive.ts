@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { Directive, forwardRef, HostBinding } from '@angular/core';
 import { DraggableDirective } from './draggable.directive';
 

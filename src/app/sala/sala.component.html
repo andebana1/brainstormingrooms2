@@ -1,9 +1,8 @@
-<!---->
   <div class="ui">
     <div class="lists">
-        <div class="list" *ngFor="let item of dropzones">
+        <div class="list" *ngFor="let item of dropzones; let i = index">
           <ul>
-            <header>Ideia X</header>
+            <header>{{classes[i]}}</header>
             <div class="dropzone" appDropzone (drop)="move(currentBox, item)" (remove)="move(currentBox, availableBoxes)">
             <div *ngFor="let box of item" class="box"
                   appDroppable (dragStart)="currentBox = box">
@@ -17,7 +16,7 @@
         </div>
     </div>  
 </div>
-<!--  -->
+ 
 <div class="list-r">
     <ul>
       <header>Suas Ideias</header>
@@ -32,8 +31,4 @@
     </footer>
   </div>
 
-  <ul>
-      <li *ngFor="let item of salas | async">
-          <pre>{{ item | json }}</pre>
-      </li>
-  </ul>
+  <button (click)="updtateIdeias()">Salvar ideias</button>

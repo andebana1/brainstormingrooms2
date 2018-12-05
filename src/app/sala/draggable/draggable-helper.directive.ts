@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { DraggableDirective } from './draggable.directive';
 import { GlobalPositionStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';

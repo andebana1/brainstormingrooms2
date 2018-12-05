@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { Directive, EventEmitter, HostBinding, HostListener, Output, ElementRef } from '@angular/core';
 
 @Directive({

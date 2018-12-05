@@ -1,3 +1,4 @@
+/*creditos: https://github.com/dirkluijk/draggable-system*/
 import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 import { DraggableDirective } from './draggable.directive';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
