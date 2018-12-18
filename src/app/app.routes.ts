@@ -15,11 +15,11 @@ import { EntrarsalaComponent } from './entrarsala/entrarsala.component';
 
 export const ROUTES: Routes = [
     {path: '', component: ContentComponent},
-    {path: 'sala', component: SalaComponent},
+    {path: 'sala/:id/:id2', component: SalaComponent},
     {path: 'login', component: LoginComponent},
     {path: 'cadastro', component: CadastroUsuarioComponent},
     {path: 'area-trabalho', component: AreaTrabalhoComponent},
-    {path: 'criar-sala', component: CriarsalaComponent},
+    {path: 'criar-sala/:string', component: CriarsalaComponent},
     {path: 'entrar-sala', component: EntrarsalaComponent}
 ]
 

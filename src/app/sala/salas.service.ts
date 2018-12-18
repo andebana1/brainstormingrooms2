@@ -28,12 +28,22 @@ export class SalasService {
   getSalas() {  
     return this.sala;  
   }  
-  addSala(sala) {  
-    this.salascollection.add(sala);  
+  addSala(temaS, admS:string) {  
+    this._afs.collection('Salas').add({
+      tema: temaS,
+      adm: admS,
+      salaativa: true,
+      classes: [],
+      emails: [
+        admS],
+      ideias: {
+      },   
+    });
   }  
   updateIdeia(id: string, ideia){
     this.salascollection.doc(id).update({ideias: ideia});
   }
+
   deleteSala(sala) {  
     this.salaDoc = this._afs.doc(`Users/${sala.id}`);  
     this.salaDoc.delete();  
