@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {SalasService} from './salas.service';
 import { Observable } from 'rxjs';
 import { Teste } from './teste';
 import { Salas } from './salas';
+import { ActivatedRoute } from '@angular/router';
 
 function remove(item: string, list: string[]) {
   if (list.indexOf(item) !== -1) {
@@ -25,16 +27,37 @@ export class SalaComponent implements OnInit {
   dropzones: any[] = [];
   availableBoxes: string[]=[];
   classes: string[] = [];
-  usuario: string = 'ranielisonsoares2@gmail.com';
-  ngOnInit() {  
+  usuario: string;
+  idDoc: number;
+  emails: string[] = [];
+  ideias : any[] = [];
+  private sub: any;
+  usuurl: string;
+  idurl: string;
+  
+  ngOnInit() {
+    //let {params} = this.route.snapshot
+    this.route.params.subscribe( params => {
+      this.usuario = params['id']; 
+      this.idurl = params['id2']; 
+    });
+    console.log(this.usuario);
     this._data.getSalas().subscribe(  
       (salas: Salas[]) => {  
         this.arr = salas;  
-        console.log(this.arr[0]); 
-        this.teste = this.arr[0].ideias[this.usuario];
-        this.numClasses = this.arr[0].classes.length;
-        this.classes = this.arr[0].classes;
-        console.log(this.classes);
+        let z = 0;
+        while(z < this.arr.length){
+          if(this.arr[z].id.match(this.idurl)){
+            this.idDoc = z;
+          }
+          z++;
+        }
+        console.log(this.idDoc);
+        this.teste = this.arr[this.idDoc].ideias[this.usuario];
+        this.ideias = this.arr[this.idDoc].ideias;
+        this.numClasses = this.arr[this.idDoc].classes.length;
+        this.classes = this.arr[this.idDoc].classes;
+        this.emails = this.arr[this.idDoc].emails;
         for (let i in this.teste){
           if(i.match('geral')===null){
            this.dropzones.push(this.teste[i]);
@@ -45,13 +68,9 @@ export class SalaComponent implements OnInit {
           }
         }
       }  
-    );   
+    ); 
   }  
-  constructor(public _data: SalasService) {  
-  }  
-  userSubmit() {  
-    this._data.addSala(this.model);  
-    this.model.test = null;  
+  constructor(private route: ActivatedRoute, public _data: SalasService) {  
   }  
   onDelete(teste) {  
     this._data.deleteSala(teste);  
@@ -65,12 +84,45 @@ export class SalaComponent implements OnInit {
       remove(box, this.dropzones[i]);
       i++;
     }while(i<this.dropzones.length);
-    //console.log(this.teste);
     toList.push(box);
+    console.log(this.arr[this.idDoc]);
   }
 
   Add(name: string): void{
     this.availableBoxes.push(name);
+  }
+  AddPessoa(name: string): void{
+    //let novo: string[] = ['teste'];
+    let t: any[] = [];
+    let i = this.arr[this.idDoc].emails.length;
+    this.emails.push(name);
+    for (let j of this.emails){
+      if(this.arr[this.idDoc].ideias[j] == null){
+        this.arr[this.idDoc].ideias[j] = {};
+      }
+    }
+
+    for (let j of this.classes){
+      this.arr[this.idDoc].ideias[name][j] = [];
+    }
+    //this.arr[0].emails.push(name);
+    //console.log(this.classes);
+    //this.arr[0].ideias.push(t);
+    //this.ideias.push();
+    //this.arr[this.idDoc].emails.push(name);
+    //this._data.addSala(name, this.usuario);
+    console.log(this.arr[this.idDoc].ideias);
+  }
+
+  AddClasse(name: string): void{
+    let t: any[] = [];
+    let i = this.arr[this.idDoc].classes.length;
+    this.arr[this.idDoc].classes.push(name);
+    for(let j in this.arr[this.idDoc].ideias){
+        this.arr[this.idDoc].ideias[j][name] = [];
+    }
+
+    console.log(this.arr[this.idDoc]);
   }
 
   addDropZone(classe: string): void{
@@ -79,17 +131,18 @@ export class SalaComponent implements OnInit {
 
   updtateIdeias(){
     let upideias: any[] = [];
-    let id = this.arr[0].id;
+    let id = this.arr[this.idDoc].id;
     let j = 0;
-    for(let i in this.arr[0].ideias[this.usuario]){
+    for(let i in this.arr[this.idDoc].ideias[this.usuario]){
       if(i.match('geral')===null){
-          this.arr[0].ideias[this.usuario][i] = this.dropzones[j];
+          this.arr[this.idDoc].ideias[this.usuario][i] = this.dropzones[j];
           j++;
       }else{
-        console.log(i);
-        this.arr[0].ideias[this.usuario][i] = this.availableBoxes;
+        this.arr[this.idDoc].ideias[this.usuario][i] = this.availableBoxes;
     }
   }
-    this._data.updateIdeia(this.arr[0].id, this.arr[0].ideias);
+    this._data.updateIdeia(this.arr[this.idDoc].id, this.arr[this.idDoc].ideias);
+    this.dropzones = [];
+    this.availableBoxes = [];
   }
 }

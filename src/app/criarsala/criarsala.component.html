@@ -13,32 +13,16 @@
 
       <hr/>
       <form>
-        <div class="form-group">
-          <input 
-            type="text"
-            class="form-control" 
-            placeholder="Nome da sala"
-          >
-        </div>
 
         <div class="form-group">
           <input 
             type="text"
             class="form-control" 
             placeholder="Tema"
+            #tema
           >
         </div>
-
-        <div class="form-group">
-            <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Quantidade máxima de pessoas"
-            >
-        </div>
-
-
-        <button routerLink = "../sala" type="submit" class="btn btnCriarSala btn-block">Criar sala</button>
+        <button type="submit" class="btn btnCriarSala btn-block" (click)="addSala(tema.value)">Criar sala</button>
       </form>
       <hr />
 

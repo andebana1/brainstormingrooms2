@@ -28,7 +28,10 @@
     <footer>
       <input class="texto" type="text" #novaideia placeholder="Digite sua ideia">
       <button (click)="Add(novaideia.value)">Enviar ideia</button>
+      <input class="texto" type="text" #novapessoa placeholder="Adicionar pessoa à sala">
+      <button (click)="AddPessoa(novapessoa.value)">Adicionar</button>
+      <input class="texto" type="text" #novaclasse placeholder="Adicionar classe à sala">
+      <button (click)="AddClasse(novaclasse.value)">Adicionar</button><br><br>
+      <button (click)="updtateIdeias()">Salvar ideias</button>
     </footer>
   </div>
-
-  <button (click)="updtateIdeias()">Salvar ideias</button>
